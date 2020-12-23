@@ -25,16 +25,15 @@ span <- span %>%
                Sub_metering_2, 
                Sub_metering_3)
 
-hist(span$Global_active_power, 
-     col = "red", 
-     xlab = "Global Active Power (kilowatts)", 
-     main = "Global Active Power")
+with(span, 
+     plot(datum, Global_active_power,
+     type = "l",
+     xlab = "",
+     ylab = "Global Active Power (kilowatts)"))
 
-
-dev.copy(png, file = "plot1.png",
+dev.copy(png, file = "plot2.png",
          width = 480, 
          height = 480, 
          units = "px")
 
 dev.off() 
-

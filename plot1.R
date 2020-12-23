@@ -15,7 +15,7 @@ span <- household_power_consumption %>%
 rm(household_power_consumption)
 
 span <- span %>% 
-        mutate(datum = mdy_hms(paste(Date, Time))) %>%
+        mutate(datum = dmy_hms(paste(Date, Time))) %>%
         select(datum, 
                Global_active_power, 
                Global_reactive_power, 
